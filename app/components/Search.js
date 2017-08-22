@@ -2,6 +2,12 @@ import React from "react";
 
 import helpers from "../untils/helpers";
 
+import Query from "./Search/Query";
+
+import Results from "./Search/Results";
+
+import {Link} from
+
 
 class Search extends React.Component {
 
