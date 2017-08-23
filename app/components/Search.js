@@ -1,36 +1,37 @@
-import React from "react";
+var React = require('react');
+var Router = require('react-router');
 
-import helpers from "../untils/helpers";
+var Query = require('./Search/Query');
+var Results = require('./Search/Results');
 
-import Query from "./Search/Query";
+var helpers = require('../utils/helpers');
 
-import Results from "./Search/Results";
-
-import {Link} from
-
-
-class Search extends React.Component {
-
-	constructor(props) {
-
-		super(props);
-
-		this.state = {
+var Search = React.createClass({
+	getInitialState: function(){
+		return {
+			term: "",
+			start: "",
+			end: "",
 			results: {}
 		}
-	}
+	},
 
-	setQuery (newQuery, newStart, newEnd) {
-		helpers.runQuery(newQuery, newStart, newEnd).then(function(data) {
-			this.setState({results: {docs: data.docs}})
-		}.bind(this));
-	}
+	setQuery: function(newQuery, newStart, newEnd){
+		this.setState({
+			term: newQuery,
+			start: newStart,
+			end: newEnd
+		})
+	},
 
 	render() {
 		return (
 			<div className= "main-container">
+
 				<Query setQuery={this.setQuery()} />
+
 				<Results results={this.state.results} />
+
 			</div>
 		)
 	}

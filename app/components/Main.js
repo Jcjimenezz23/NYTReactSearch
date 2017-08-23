@@ -1,22 +1,22 @@
-import React from "react";
+var React = require('react');
+var Search = require('./Search.js');
 
-import {Link} from "react-router";
+var Main = React.createClass({
 
-const Main extends React.Component {
-	
 	render() {
 		return (
 
-		<div>
-			<h1> Hello JC </h1>
-			<Link to="/saved">Click here for saved articles</Link>
-			<Link to="/search">Click here for searched articles</Link>
-			<div>
-				{this.props.children}
+		    <div className="main-container">
+				<div className="jumbotron">
+					<h1 className="text-center"> New York Times Search </h1>
+					<p className="lead text-center"> A React based module to search for New York Times articles, save articles and comment on articles. </p> 
+				</div>
+				<div className="container">
+					{this.props.children}
+				</div>
 			</div>
-		</div>
 		)
 	}
 }
 
-export default Main;
+module.exports = Main;

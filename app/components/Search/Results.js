@@ -1,5 +1,8 @@
 import React from "react";
 
+import helpers from "../../utils/helpers";
+
+
 	const Results = (props) => {
 
 		return (
