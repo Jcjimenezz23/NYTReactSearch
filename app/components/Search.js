@@ -36,5 +36,4 @@ var Search = React.createClass({
 		)
 	}
 }
-
 export default Search;
