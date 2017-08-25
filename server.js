@@ -1,6 +1,7 @@
 // Include Server Dependencies
 var express = require("express");
 var bodyParser = require("body-parser");
+//morgan logs all the routes into the terminal
 var logger = require("morgan");
 var mongoose = require("mongoose");
 

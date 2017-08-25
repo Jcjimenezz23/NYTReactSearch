@@ -1,39 +1,14 @@
-var React = require('react');
-var Router = require('react-router');
+// Include React
+var React = require("react");
 
-var Query = require('./Search/Query');
-var Results = require('./Search/Results');
-
-var helpers = require('../utils/helpers');
-
+// Create the Header component
 var Search = React.createClass({
-	getInitialState: function(){
-		return {
-			term: "",
-			start: "",
-			end: "",
-			results: {}
-		}
-	},
+ render: function() {
+   return (
+     <h1>I'm The Search Component!</h1>
+   );
+ }
+});
 
-	setQuery: function(newQuery, newStart, newEnd){
-		this.setState({
-			term: newQuery,
-			start: newStart,
-			end: newEnd
-		})
-	},
-
-	render() {
-		return (
-			<div className= "main-container">
-
-				<Query setQuery={this.setQuery()} />
-
-				<Results results={this.state.results} />
-
-			</div>
-		)
-	}
-}
-export default Search;
+// Export the component back for use in other files
+module.exports = Search;
